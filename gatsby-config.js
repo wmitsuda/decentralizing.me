@@ -8,7 +8,9 @@ module.exports = {
       twitter: `kylemathews`,
     },
   },
+  pathPrefix: '__GATSBY_IPFS_PATH_PREFIX__',
   plugins: [
+    'gatsby-plugin-ipfs',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -66,7 +68,6 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
