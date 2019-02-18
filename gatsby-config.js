@@ -1,12 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    title: `Decentralizing.me`,
+    author: `Willian Mitsuda`,
+    description: `A blog about web3 stuff`,
+    siteUrl: `https://blog.decentralizing.me`,
   },
   pathPrefix: '__GATSBY_IPFS_PATH_PREFIX__',
   plugins: [
