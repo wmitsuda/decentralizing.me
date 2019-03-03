@@ -6,6 +6,17 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
 
+import rehypeReact from "rehype-react";
+import { AddTokenButton, RequestTokenButton } from "../components/Token";
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    "add-token-button": AddTokenButton,
+    "request-token-button": RequestTokenButton
+  }
+}).Compiler;
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
@@ -26,7 +37,7 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        {renderAst(post.htmlAst)}
         <hr
           style={{
             marginBottom: rhythm(1)
@@ -76,7 +87,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      htmlAst
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
