@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "author": "Willian Mitsuda <wmitsuda@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.3.0",
+    "gatsby": "^2.3.2",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-feed": "^2.1.0",
     "gatsby-plugin-google-analytics": "^2.0.17",
